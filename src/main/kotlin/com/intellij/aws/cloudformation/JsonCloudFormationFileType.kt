@@ -7,6 +7,7 @@ import com.intellij.json.JsonLanguage
 import com.intellij.openapi.fileTypes.FileTypeManager
 import com.intellij.openapi.fileTypes.LanguageFileType
 import com.intellij.openapi.fileTypes.ex.FileTypeIdentifiableByVirtualFile
+import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.util.RecursionManager
 import com.intellij.openapi.vfs.VirtualFile
 import javax.swing.Icon
@@ -17,7 +18,7 @@ class JsonCloudFormationFileType : LanguageFileType(JsonLanguage.INSTANCE), File
   override fun getName(): String = "AWSCloudFormation (JSON)"
   override fun getDescription(): String = "AWS CloudFormation templates (JSON)"
   override fun getDefaultExtension(): String = ""
-  override fun getIcon(): Icon? = AllIcons.FileTypes.Json
+  override fun getIcon(): Icon? =  IconLoader.getIcon("/icons/cfn.png")
 
   override fun isMyFileType(file: VirtualFile): Boolean {
     val extension = file.extension ?: return false
